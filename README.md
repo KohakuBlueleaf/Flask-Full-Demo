@@ -15,10 +15,12 @@ For online demo, click [this](https://flask.amb-ri.com)
 **Ensure You have a MongoDB server running on port 27017 or change the URI in database/db.py**
 
 1. Install the requirements
+
     ```bash
     python3 -m pip install -r requirement.txt
     ```
 2. run the dev.py script.
+
     ```bash
     python3 dev.py
     ```
