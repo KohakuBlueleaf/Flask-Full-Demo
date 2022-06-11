@@ -1,0 +1,62 @@
+{% extends '_components/base.html' %}
+
+{% block header %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('chat.static', filename='css/chat_main.css') }}">
+{% endblock %}
+
+{% block footer %}
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" ></script>
+  <script src="{{url_for('chat.static', filename='js/chat_main.js')}}"></script>
+  <script>
+    init();
+    sio_init();
+  </script>
+{% endblock %}
+
+
+{% block body %}
+<div class="ui fixed inverted menu">
+  <div class = "ui container" style="width: 723px">
+    <a class = "right floated item" href="/login/logout">Logout</a>
+  </div>
+</div>
+<br>
+<div class = "ui container" style="width: 723px; padding-top: 2.5em;">
+  <div class="ui card">
+    <div class="content">
+      <div>Login As: {{user}}</div>
+      <div>UID: {{id}}</div>
+    </div>
+  </div>
+
+  <div id="log" class="ui card">
+    <div class="content">
+      <div class="header">Server Log</div>
+      <div class="meta">SID:</div>
+      <div id="log-mes">Server:</div>
+    </div>
+  </div>
+  
+  <div id="mes-container">
+    <div id="mes" class="ui feed" v-cloak>
+      <div class="event" v-for="msg in messages">
+        <div class="content">
+          <div class="summary">
+            <a class="user">{[msg.author]}</a><span>{[msg.time]}</span>
+          </div>
+          <div class="extra text"><pre>{[msg.content]}</pre>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <form class = "ui form" id="emit" method="POST" style="position: fixed; bottom:5vh; margin-right: 1em;">
+    <div class="ui action input">
+      <textarea cols="50" rows="auto" name="mes_input" id="mes_input" placeholder="Type something"></textarea>
+      <button id="submit" type="button" class="ui primary button">Send</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

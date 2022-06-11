@@ -1,0 +1,42 @@
+<Project>
+├─ utils //utilities package
+│  ├─ __init__.py
+│  └─ <module>.py
+│
+├─ database //database package
+│  ├─ __init__.py
+│  └─ db.py
+│
+├─ pages //page modules
+│  ├─ __init__.py
+│  ├─ _components //public jinja2 components
+│  │  └─ <component>.html
+│  │
+│  ├─ _static //public static files
+│  │  ├─ js
+│  │  │  └─ <page_javascript>.js
+│  │  │
+│  │  ├─ css
+│  │  │  └─ <page_stylesheet>.css
+│  │  │
+│  │  └─ <other media...>
+│  │
+│  └─ <page>
+│     ├─ templates //page templates
+│     │  └─ <page_template>.html
+│     │
+│     ├─ static //page static files
+│     │  ├─ js
+│     │  │  └─ <page_javascript>.js
+│     │  │
+│     │  ├─ css
+│     │  │  └─ <page_stylesheet>.css
+│     │  │
+│     │  └─ <other media...>
+│     │
+│     ├─ __init__.py
+│     └─ <page_server>.py
+│
+├─ app_init.py //initialize Flask app with plugin
+└─ main.py
+

@@ -1,0 +1,28 @@
+#mes-container{
+  max-height: calc(96.5vh - 290px - 2.5em);
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 5px;
+  height: 100% !important;
+  padding: .75rem;
+}
+#emit_data{
+  height: 60px !important; 
+}
+#mes span{
+  padding-left: 1rem;
+}
+pre{
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: break-spaces;
+  word-wrap: break-word;
+}
+
+#mes .event{
+  flex-direction: column;
+}
+#mes .event hr{
+  width: 100%;
+}

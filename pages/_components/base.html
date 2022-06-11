@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include '_components/header.html' %}
+    {% block header %}{% endblock %}
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+    {% include '_components/footer.html' %}
+    {% block footer %}{% endblock %}
+  </body>
+</html>
